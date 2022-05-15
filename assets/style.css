@@ -15,11 +15,11 @@ html {
 }
 
 .main {
-    position: relative;
-    height: 100vh;
-    width: 100%;
-    background-color: #040d21;
-    position: relative;
+  position: relative;
+  height: 100vh;
+  width: 100%;
+  background-color: #040d21;
+  position: relative;
 }
 
 .main::before {
@@ -102,60 +102,102 @@ html {
 }
 
 div.welcome {
-    position: absolute;
-    top: calc(50% - 25vh);
-    left: calc(50% - 30vw);
-    width: 60vw;
-    height: 60vh;
-    background: rgba(78, 108, 130, 0.27);
-    border-radius: 40px;
+  position: absolute;
+  top: calc(50% - 25vh);
+  left: calc(50% - 30vw);
+  width: 60vw;
+  height: 60vh;
+  background: rgb(0 0 0 / 12%);
+  /* background: rgba(78, 108, 130, 0.27); */
+  /* background: rgba(12, 22, 45, 0.5); */
+  border-radius: 40px;
 }
 
 /* 743 */
-.welcome h2 {
-    position: absolute;
-    top: -100px;
-    font-size: 4rem;
-    font-weight: 600;
-    color: aliceblue;
-    text-align: center;
+.start-one h2 {
+  position: relative;
+  z-index: 4;
+  padding-top: 80px;
+  font-size: 4rem;
+  font-weight: 600;
+  color: aliceblue;
+  text-align: center;
 }
 
 .welcome .type-name {
-    padding: 24px;
+  padding: 24px;
 }
 
 .type-name .cohete {
-    font-size: 8rem;
-    text-align: center;
-    padding-bottom: 16px;
+  font-size: 8rem;
+  text-align: center;
+  padding-bottom: 16px;
 }
 
 .welcome .type-name p {
-    font-size: 2rem;
-    font-weight: 500;
-    color: #E4E4E4;
-    text-align: center;
-    padding: 0 20px;
+  font-size: 2rem;
+  font-weight: 500;
+  color: #e4e4e4;
+  text-align: center;
+  padding: 0 20px;
 }
 
 .name-user {
-    display: flex;
-    justify-content: center;
-    padding-top: 40px;
+    position: relative;
+}
+
+.name-user label {
+    position: absolute;
+  font-size: 2rem;
+  font-weight: 600;
+  font-family: var(--font-primary);
+  color: #E900F0;
+}
+
+.name-user .enter-name {
+  display: flex;
+  place-content: center;
+  padding-top: 40px;
+}
+
+.name-user p.arrow {
+  font-size: 3.2rem;
+    color: #EE00F7;
 }
 
 .name-user input.name {
-    border: none;
-    padding: 8px 20px;
-    outline: none;
-    width: 400px;
-    border-radius: 12px;
-    font-size: 2rem;
-    font-family: var(--font-primary);
-    background: transparent;
-    color: #fff;
+  border: none;
+  padding: 8px 20px;
+  outline: none;
+  width: 400px;
+  border-radius: 12px;
+  font-size: 2rem;
+  font-family: var(--font-primary);
+  background: transparent;
+  color: #fff;
 }
+
+.name-user .btn-main {
+  padding: 0 28px;
+  border: none;
+  border-radius: 12px;
+  color: #fff;
+  font-size: 1.6rem;
+  font-weight: 700;
+  cursor: pointer;
+  /* background: linear-gradient(90.25deg, #1dabf5 2.56%, #97d2f0 99.78%); */
+  /* background: linear-gradient(90.25deg, #97D2F0 2.56%, #1DABF5 29.1%, #1DABF5 76.7%, #97D2F0 99.78%); */
+  background: #1dabf5;
+}
+
+.name-user .btn-main:hover {
+  transition: all 0.3s ease-in;
+  /* background: #E900F0; */
+  background: #0090de;
+}
+
+
+
 
 
 
@@ -198,10 +240,9 @@ div.welcome {
 
 
 div#app {
-    display: grid;
-    grid-template-columns: repeat(8, 1fr);
-  }
-
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+}
 
 @media (prefers-reduced-motion) {
   .signup-stars {

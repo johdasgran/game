@@ -101,6 +101,10 @@ html {
   }
 }
 
+#start-one {
+  display: none;
+}
+
 div.welcome {
   position: absolute;
   top: calc(50% - 25vh);
@@ -144,14 +148,6 @@ div.welcome {
 
 .name-user {
     position: relative;
-}
-
-.name-user label {
-    position: absolute;
-  font-size: 2rem;
-  font-weight: 600;
-  font-family: var(--font-primary);
-  color: #E900F0;
 }
 
 .name-user .enter-name {

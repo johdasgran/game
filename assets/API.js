@@ -6,7 +6,7 @@ fetch("https://finalspaceapi.com/api/v0/character")
     cardsImage.forEach(element => {
         console.log(element.name);
 
-        let container = document.querySelector("main.main");
+        let container = document.querySelector("div#app");
     
          // Container image
          let card_image = document.createElement("div");

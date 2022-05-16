@@ -1,26 +1,70 @@
-fetch("https://finalspaceapi.com/api/v0/character/?limit=24")
-  .then((resp) => resp.json())
-  .then((datos) => {
-    // console.log(datos);
-    const cardsImage = datos;
+// fetch("https://finalspaceapi.com/api/v0/character/") // ?limit=24
+//   .then((resp) => resp.json())
+//   .then((datos) => {
+//     // console.log(datos);
+//     const cardsImage = datos;
+//     console.log(cardsImage)
+//     // let arrayNumbers = [];
 
-    let arrayNumbers = [];
-
-    const min = 1;
-    const max = 47;
+//     // const min = 1;
+//     // const max = 47;
     
-    for (let i = 0; arrayNumbers.length < 10; i++) {
-      const n = Math.floor(Math.random() * (max - min)) + min;
-      !arrayNumbers.includes(n) && arrayNumbers.push(n);
-    }
+//     // for (let i = 0; arrayNumbers.length < 10; i++) {
+//     //   const n = Math.floor(Math.random() * (max - min)) + min;
+//     //   !arrayNumbers.includes(n) && arrayNumbers.push(n);
+//     // }
 
-    console.log(arrayNumbers)
+//     // console.log(arrayNumbers)
+
+//     // const cardsShow = [];
+
+//     // cardsImage.forEach((e, index) => {
+//     //    cardsShow.push()
+//     //    console.log(e)
+//     // });
+//     // console.log(cardsShow)
+
+
+//     cardsImage.forEach((element) => {
+//       // console.log(element.name);
+
+//       let container = document.querySelector("div#app");
+
+//       // Container image
+//       let card_image = document.createElement("div");
+//       card_image.id = "image";
+//       container.appendChild(card_image);
+
+//       // Image
+//     //   let image = document.createElement("img");
+//     //   image.src = element.img_url;
+//     //   image.classList = "card-image";
+//     //   card_image.appendChild(image);
+//     });
+//   });
 
 
 
- 
-    cardsImage.forEach((element) => {
-      // console.log(element.name);
+  
+let arrayNumbers = [];
+
+const min = 1;
+const max = 47;
+
+for (let i = 0; arrayNumbers.length < 10; i++) {
+  const n = Math.floor(Math.random() * (max - min)) + min;
+  !arrayNumbers.includes(n) && arrayNumbers.push(n);
+}
+
+
+console.log(arrayNumbers);
+
+for (let i = 0; i < 10; i++) {
+  fetch(`https://finalspaceapi.com/api/v0/character/${arrayNumbers[i]}`)
+    .then((resp) => resp.json())
+    .then((datos) => {
+      console.log(datos);
+      const cardsImage = datos;
 
       let container = document.querySelector("div#app");
 
@@ -31,38 +75,17 @@ fetch("https://finalspaceapi.com/api/v0/character/?limit=24")
 
       // Image
       let image = document.createElement("img");
-      image.src = element.img_url;
+      image.src = datos.img_url;
       image.classList = "card-image";
       card_image.appendChild(image);
+
+
+
+
+
     });
-  });
 
-
-
-
-  
-
-
-// let arrayNumbers = [];
-
-// const min = 1;
-// const max = 47;
-
-// for (let i = 0; arrayNumbers.length < 10; i++) {
-//   const n = Math.floor(Math.random() * (max - min)) + min;
-//   !arrayNumbers.includes(n) && arrayNumbers.push(n);
-// }
-
-
-// console.log(arrayNumbers);
-
-// for (let i = 0; i < 10; i++) {
-//   fetch(`https://finalspaceapi.com/api/v0/character/${arrayNumbers[i]}`)
-//     .then((resp) => resp.json())
-//     .then((datos) => {
-//       console.log(datos);
-//     });
-// }
+}
 
 
 

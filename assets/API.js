@@ -14,10 +14,10 @@ fetch("https://finalspaceapi.com/api/v0/character/?limit=24")
          container.appendChild(card_image);
    
          // Image
-         let image = document.createElement("img");
-         image.src = element.img_url;
-         image.classList = "card-image"
-         card_image.appendChild(image);
+        //  let image = document.createElement("img");
+        //  image.src = element.img_url;
+        //  image.classList = "card-image"
+        //  card_image.appendChild(image);
     });
     
 

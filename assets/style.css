@@ -218,14 +218,21 @@ div#app img.card-image {
   border-radius: 12px;
   position: relative;
   opacity: 0;
+  overflow: hidden;
 }
 
  div#image {
   width: 160px;
   height: 200px;
   border: none;
+  cursor: pointer;
   border-radius: 12px;
+  overflow: hidden;
   background: url(./images/Frame\ 3.svg) center/cover no-repeat;
+}
+
+img.card-image:hover {
+  transform: scale(1.2);
 }
 
 

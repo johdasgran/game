@@ -1,4 +1,4 @@
-fetch("https://finalspaceapi.com/api/v0/character")
+fetch("https://finalspaceapi.com/api/v0/character/?limit=24")
 .then(resp => resp.json())
 .then(datos => {
     console.log(datos);
@@ -16,6 +16,7 @@ fetch("https://finalspaceapi.com/api/v0/character")
          // Image
          let image = document.createElement("img");
          image.src = element.img_url;
+         image.classList = "card-image"
          card_image.appendChild(image);
     });
     

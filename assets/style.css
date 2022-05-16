@@ -194,51 +194,101 @@ div.welcome {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+/**** Card ****/
 
 
 div#app {
   display: grid;
   grid-template-columns: repeat(8, 1fr);
+  gap: 8px;
+  position: relative;
+  z-index: 5;
+  place-content: center;
+  place-items: center;
+  width: 100%;
+  height: 100vh;
+
 }
+
+div#app img.card-image {
+  width: 160px;
+  height: 200px;
+  object-fit: cover;
+  outline: none;
+  border-radius: 12px;
+  position: relative;
+}
+g
+
+
+ /* div#image {
+  width: 160px;
+  height: 200px;
+  border: none;
+  border-radius: 12px;
+  background: url(./images/Group\ 23.png) center/cover no-repeat;
+}
+ */
+
+
+
+/* .game-card-under-verification{
+  background-color:white;
+  text-align: center;
+  font: 100px/220px Georgia, Times New Roman, serif;
+  transform: rotateY(360deg);
+  transition: 0.3s;
+  transform-style: preserve-3d;
+}
+
+.game-card-revealed{
+  text-align: center;
+  font: 100px/220px Georgia, Times New Roman, serif;
+  opacity: 0.5;
+  background-color:white;
+}
+ */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 @media (prefers-reduced-motion) {
   .signup-stars {

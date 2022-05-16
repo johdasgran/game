@@ -79,9 +79,16 @@ for (let i = 0; i < 10; i++) {
       image.classList = "card-image";
       card_image.appendChild(image);
 
-
-
-
+       // Container image
+       let card = document.createElement("div");
+       card.id = "image";
+       container.appendChild(card);
+ 
+       // Image
+       let imag = document.createElement("img");
+       imag.src = datos.img_url;
+       imag.classList = "card-image";
+       card.appendChild(imag);
 
     });
 

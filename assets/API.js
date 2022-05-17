@@ -95,6 +95,7 @@ for (let i = 0; i < 12; i++) {
       // Container image
       let card_image = document.createElement("div");
       card_image.id = "image";
+      card_image.classList = "wobble-ver-right";
       container.appendChild(card_image);
 
       // Image
@@ -141,6 +142,7 @@ for (let i = 0; i < 12; i++) {
         // Container image
         let card_image = document.createElement("div");
         card_image.id = "image";
+        card_image.classList = "wobble-ver-right";
         container.appendChild(card_image);
   
         // Image

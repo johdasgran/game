@@ -1,6 +1,3 @@
-
-
-
 const nameUser = document.querySelector('#name');
 const addName = document.querySelector('#addName');
 
@@ -17,3 +14,8 @@ addName.addEventListener("click", (e)=>{
     }))
 
 })
+
+
+const activeCard = document.querySelectorAll(".card-image");
+
+console.log(activeCard)

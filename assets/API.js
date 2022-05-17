@@ -55,11 +55,7 @@
 function desordenar(unArray){
     var t = unArray.sort(function(a,b) {return (Math.random()-0.5)});
     return [...t];
-  } // esta función me desordena un array
-  
-
-// xdddddddddddd////////////////////
-
+  } 
   
 let arrayNumbers = [];
 
@@ -73,10 +69,9 @@ for (let i = 0; arrayNumbers.length < 12; i++) {
 
 numerosDesordenados = [];
 
-for (i=0;i<1;i++){ //creo bucle para llenar array vacío
+for (i=0;i<1;i++){ 
     x = desordenar(arrayNumbers);
     numerosDesordenados[i] = x;
-    // console.log(i,x);
   }
 
   console.log(numerosDesordenados[0])
@@ -87,8 +82,8 @@ for (let i = 0; i < 12; i++) {
   fetch(`https://finalspaceapi.com/api/v0/character/${arrayNumbers[i]}`)
     .then((resp) => resp.json())
     .then((datos) => {
-      console.log(datos);
-      const cardsImage = datos;
+      // console.log(datos);
+      // const cardsImage = datos;
 
       let container = document.querySelector("div#app");
 
@@ -104,21 +99,12 @@ for (let i = 0; i < 12; i++) {
       image.classList = "card-image";
       card_image.appendChild(image);
 
-    //    // Container image
-    //    let card = document.createElement("div");
-    //    card.id = "image";
-    //    container.appendChild(card);
- 
-    //    // Image
-    //    let imag = document.createElement("img");
-    //    imag.src = datos.img_url;
-    //    imag.classList = "card-image";
-    //    card.appendChild(imag);
+
 
     });
 
 }
-
+g
 
 
 // Juego de memoria, recordar imagenes de personajes con la API Final Space,
@@ -126,17 +112,11 @@ for (let i = 0; i < 12; i++) {
 // GUardar puntaje en localStorage y recordar nombre
 
 
-  
-//   console.log(numerosDesordenados);
-
-
   for (let i = 0; i < 12; i++) {
     fetch(`https://finalspaceapi.com/api/v0/character/${numerosDesordenados[0][i]}`)
       .then((resp) => resp.json())
       .then((datos) => {
-        console.log(datos);
-        const cardsImage = datos;
-  
+
         let container = document.querySelector("div#app");
   
         // Container image

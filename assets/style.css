@@ -218,7 +218,7 @@ div#app img.card-image {
   outline: none;
   border-radius: 12px;
   position: relative;
-  opacity: 0;
+  opacity: 1;
   overflow: hidden;
 }
 

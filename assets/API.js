@@ -96,15 +96,14 @@ for (let i = 0; i < 12; i++) {
       // Image
       let image = document.createElement("img");
       image.src = datos.img_url;
-      image.classList = "card-image";
+      image.dataset.idPair = datos.id;
+      image.classList = `card-image ${datos.id}`;
       card_image.appendChild(image);
-
 
 
     });
 
 }
-g
 
 
 // Juego de memoria, recordar imagenes de personajes con la API Final Space,
@@ -116,7 +115,7 @@ g
     fetch(`https://finalspaceapi.com/api/v0/character/${numerosDesordenados[0][i]}`)
       .then((resp) => resp.json())
       .then((datos) => {
-
+        console.log(datos)
         let container = document.querySelector("div#app");
   
         // Container image
@@ -128,7 +127,8 @@ g
         // Image
         let image = document.createElement("img");
         image.src = datos.img_url;
-        image.classList = "card-image";
+        image.dataset.idPair = datos.id;
+        image.classList = `card-image ${datos.id}`;
         card_image.appendChild(image);
   
       });

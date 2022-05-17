@@ -16,6 +16,8 @@ addName.addEventListener("click", (e)=>{
 })
 
 
-const activeCard = document.querySelectorAll(".card-image");
+setTimeout(()=> {
+    const activeCard = document.querySelectorAll(".card-image");
+    console.log(activeCard)
+}, 200)
 
-console.log(activeCard)

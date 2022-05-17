@@ -96,7 +96,7 @@ for (let i = 0; i < 12; i++) {
       // Image
       let image = document.createElement("img");
       image.src = datos.img_url;
-      image.dataset.idPair = datos.id;
+      image.id = datos.id;
       image.classList = `card-image ${datos.id}`;
       card_image.appendChild(image);
 
@@ -115,7 +115,7 @@ for (let i = 0; i < 12; i++) {
     fetch(`https://finalspaceapi.com/api/v0/character/${numerosDesordenados[0][i]}`)
       .then((resp) => resp.json())
       .then((datos) => {
-        console.log(datos)
+        // console.log(datos)
         let container = document.querySelector("div#app");
   
         // Container image
@@ -127,7 +127,7 @@ for (let i = 0; i < 12; i++) {
         // Image
         let image = document.createElement("img");
         image.src = datos.img_url;
-        image.dataset.idPair = datos.id;
+        image.id = datos.id;
         image.classList = `card-image ${datos.id}`;
         card_image.appendChild(image);
   

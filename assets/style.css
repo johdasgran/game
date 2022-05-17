@@ -218,8 +218,9 @@ div#app img.card-image {
   outline: none;
   border-radius: 12px;
   position: relative;
-  opacity: 1;
+  opacity: 0;
   overflow: hidden;
+  transition: all 0.4s ease-in;
 }
 
  div#image {

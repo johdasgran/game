@@ -44,19 +44,19 @@ setTimeout(()=> {
             // console.log(active[count].attributes[1].value);
             pair.push(active[count].attributes[1].value);
             
+            count++
             console.log(pair)
 
             if(pair.length === 2 && pair[0] === pair[1]) {
                 console.log("WIiiiih xd")
-            } else if(pair.length === 2 && pair[0] !== pair[1]) {
+            } else if(pair.length === 2 && pair[0] != pair[1]) {
                 count = 0
+                pair.pop(1)
                 pair.pop(0)
-                pair.pop(0)
-
-            }
+            } 
 
 
-            count++
+            
             // console.log(count++)
         });
     })
@@ -71,5 +71,5 @@ setTimeout(()=> {
 
 
 
-}, 200)
+}, 800)
 

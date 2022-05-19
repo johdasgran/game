@@ -41,20 +41,23 @@ setTimeout(()=> {
            
 
             const active = document.querySelectorAll(".active")
-            // console.log(active[count].attributes[1].value);
-            pair.push(active[count].attributes[1].value);
-            
+            console.log(active[count].id);
             count++
-            console.log(pair)
 
-            if(pair.length === 2 && pair[0] === pair[1]) {
-                console.log("WIiiiih xd")
-            } else if(pair.length === 2 && pair[0] != pair[1]) {
-                count = 0
-                pair.pop(1)
-                pair.pop(0)
-            } 
 
+            // pair.push(active[count].attributes[1].value);
+            
+            // count++
+            // console.log(pair)
+
+            // if(pair.length === 2 && pair[0] === pair[1]) {
+            //     console.log("WIiiiih xd")
+            // } else if(pair.length === 2 && pair[0] != pair[1]) {
+            //     count = 0
+            // } 
+
+            // console.log(count)
+            // console.log("pair: ", pair)
 
             
             // console.log(count++)

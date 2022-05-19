@@ -1,4 +1,3 @@
-
 function createCards(params) {
   cardsImage.forEach((element) => {
     // console.log(element.name);
@@ -16,37 +15,63 @@ function createCards(params) {
     image.classList = "card-image";
     card_image.appendChild(image);
   });
-
 }
+
+
+
+function shuffle(unArray) {
+  var t = unArray.sort(function (a, b) {
+    return Math.random() - 0.5;
+  });
+  return [...t];
+}
+
 
 
 function createGame(characters) {
 
- g
-
-
 
 
 }
+
+
+
+function createLevel(params) {
+  
+  const arrayIds = [];
+  const min = 1;
+  const max = 47;
+
+  for (let i = 0; arrayIds.length < 12; i++) {
+    const n = Math.floor(Math.random() * (max - min)) + min;
+    !arrayIds.includes(n) && arrayIds.push(n);
+  }
+
+  console.log(arrayIds);
+
+  const arrayIdsPair = [...arrayIds, ...arrayIds];
+
+  return shuffle(arrayIdsPair)
+}
+
 
 
 function cleanAPI(dataAPI) {
   const cleanAPI = [];
-  for (const {id: id, name: name, img_url: img_url} of dataAPI) {
-    cleanAPI.push({id: id, name: name, img_url: img_url})
+  for (const { id: id, name: name, img_url: img_url } of dataAPI) {
+    cleanAPI.push({ id: id, name: name, img_url: img_url });
   }
-  console.log(cleanAPI)
+  console.log(cleanAPI);
+  return createGame(cleanAPI);
 }
-
 
 fetch("https://finalspaceapi.com/api/v0/character/") // ?limit=24
   .then((resp) => resp.json())
   .then((datos) => {
-    return cleanAPI(datos)
+    return cleanAPI(datos);
 
-    // const [{id, name, img_url}] = datos 
+    // const [{id, name, img_url}] = datos
     // console.log(id, name, img_url)
-   
   });
 
 
@@ -101,42 +126,13 @@ fetch("https://finalspaceapi.com/api/v0/character/") // ?limit=24
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/// LO que llevo hasta ahora xd!! 
-
+/// LO que llevo hasta ahora xd!!
 
 // function desordenar(unArray){
 //     var t = unArray.sort(function(a,b) {return (Math.random()-0.5)});
 //     return [...t];
-//   } 
-  
+//   }
+
 // let arrayNumbers = [];
 
 // const min = 1;
@@ -149,7 +145,7 @@ fetch("https://finalspaceapi.com/api/v0/character/") // ?limit=24
 
 // numerosDesordenados = [];
 
-// for (i=0;i<1;i++){ 
+// for (i=0;i<1;i++){
 //     x = desordenar(arrayNumbers);
 //     numerosDesordenados[i] = x;
 //   }
@@ -184,11 +180,9 @@ fetch("https://finalspaceapi.com/api/v0/character/") // ?limit=24
 
 // }
 
-
 // // Juego de memoria, recordar imagenes de personajes con la API Final Space,
 // // Jugar con animaciones al inico e iteractividad para el jugador xd
 // // GUardar puntaje en localStorage y recordar nombre
-
 
 //   for (let i = 0; i < 12; i++) {
 //     fetch(`https://finalspaceapi.com/api/v0/character/${numerosDesordenados[0][i]}`)
@@ -196,21 +190,20 @@ fetch("https://finalspaceapi.com/api/v0/character/") // ?limit=24
 //       .then((datos) => {
 //         // console.log(datos)
 //         let container = document.querySelector("div#app");
-  
+
 //         // Container image
 //         let card_image = document.createElement("div");
 //         card_image.id = "image";
 //         card_image.classList = "wobble-ver-right";
 //         container.appendChild(card_image);
-  
+
 //         // Image
 //         let image = document.createElement("img");
 //         image.src = datos.img_url;
 //         image.id = datos.id;
 //         image.classList = `card-image ${datos.id}`;
 //         card_image.appendChild(image);
-  
+
 //       });
-  
+
 //   }
-  

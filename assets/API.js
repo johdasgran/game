@@ -1,9 +1,21 @@
 
+import { updateLocaStorage } from "./main.js";
+
+
+
+
+
+function createLevelOne(params) {
+  
+}
+
+
 
 function initGame(params) {
 
+
     const cards = document.querySelectorAll(".card-image");
-    console.log(cards)
+    // console.log(cards)
 
     let count = 0;
     let pair = [];
@@ -24,11 +36,11 @@ function initGame(params) {
             const loseSound = new Audio('/assets/sounds/lose.wav');
             const winGame = new Audio('/assets/sounds/win.wav');
 
-// music.pause();
+            // music.pause();
 
 
          const active = document.querySelectorAll(".active")
-          console.log(active)
+          // console.log(active)
 
 
           if(pair.length === 2 && pair[0] === pair[1]){
@@ -44,6 +56,7 @@ function initGame(params) {
             if (nextoLevel.length === 24) {
               winGame.play();
               console.log("q crack pasas al siguiente nievel")
+              updateLocaStorage(2)
             }
 
 
@@ -95,7 +108,7 @@ function initGame(params) {
 
 
 function createGame(characters) {
-  console.log(characters);
+  // console.log(characters);
 
   const idCard = createLevel();
 

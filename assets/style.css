@@ -197,6 +197,28 @@ div.welcome {
 
 /**** Card ****/
 
+.nextToLevel {
+  display: none;
+  font-size: 6rem;
+  /* ##f34c28  #f56f28 */
+  position: absolute;
+  top: 4%;
+  left: calc(50% - 580px);
+}
+
+.one {
+  color: #fff498;
+}
+
+.two{
+  color: #f56f28;
+}
+
+.three {
+  color: #f34c28;
+}
+
+
 
 div#app {
   display: none;
@@ -487,10 +509,37 @@ img.card-image:hover {
 
 
 
+.scale-in-center {
+	-webkit-animation: scale-in-center 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+	        animation: scale-in-center 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+}
 
 
 
-
+@-webkit-keyframes scale-in-center {
+  0% {
+    -webkit-transform: scale(0);
+            transform: scale(0);
+    opacity: 1;
+  }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+    opacity: 1;
+  }
+}
+@keyframes scale-in-center {
+  0% {
+    -webkit-transform: scale(0);
+            transform: scale(0);
+    opacity: 1;
+  }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+    opacity: 1;
+  }
+}
 
 
 

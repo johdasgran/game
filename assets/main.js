@@ -17,6 +17,9 @@ export function updateLocaStorage(level) {
   }))
 }
 
+
+const one = document.querySelector(".one")
+
 addName.addEventListener("click", (e)=>{
     console.log(nameUser.value);
 
@@ -27,12 +30,13 @@ addName.addEventListener("click", (e)=>{
 
     setTimeout(()=> {
         startOne.classList = "start-one disabled";
+        one.classList = "nextToLevel one scale-in-center enable";
     }, 300)
 
     setTimeout(()=>{
         console.log("600ms")
         console.log(app.classList = "bounce-in-right enable")
-    }, 600)
+    }, 1800)
 
 })
 

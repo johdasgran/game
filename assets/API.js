@@ -11,7 +11,7 @@ function createLevelOne(params) {
 
 
 
-function initGame(params) {
+function initGame(cardsToShow) {
 
 
     const cards = document.querySelectorAll(".card-image");
@@ -53,13 +53,11 @@ function initGame(params) {
             console.log("cartas: "+ nextoLevel.length)
             console.log("wiii")
 
-            if (nextoLevel.length === 24) {
+            if (nextoLevel.length === cardsToShow) {
               winGame.play();
               console.log("q crack pasas al siguiente nievel")
               updateLocaStorage(2)
             }
-
-
 
             pair.pop(0)
             pair.pop(0)
@@ -89,13 +87,6 @@ function initGame(params) {
             // count = 0
           }
 
-
-       
-
-          // if(nextoLevel.length == 24){
-          //   console.log("Eres un ganador xd")
-          // }
-
         })
     })
 
@@ -110,7 +101,7 @@ function initGame(params) {
 function createGame(characters) {
   // console.log(characters);
 
-  const idCard = createLevel();
+  const idCard = createLevel(6);
 
   idCard.forEach((element) => {
     const { id, name, img_url } = characters[element];
@@ -132,7 +123,7 @@ function createGame(characters) {
       card_image.appendChild(image);
   });
 
-  initGame();
+  initGame(6*2);
 
 }
 
@@ -147,12 +138,12 @@ function shuffle(arrayWithIds) {
 
 
 
-function createLevel(params) {
+function createLevel(numberIds) {
   const arrayIds = [];
   const min = 1;
   const max = 47;
 
-  for (let i = 0; arrayIds.length < 12; i++) {
+  for (let i = 0; arrayIds.length < numberIds; i++) {
     const n = Math.floor(Math.random() * (max - min)) + min;
     !arrayIds.includes(n) && arrayIds.push(n);
   }

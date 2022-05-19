@@ -7,8 +7,6 @@ function initGame(params) {
 
     let count = 0;
     let pair = [];
-  
-    
 
     cards.forEach((e, i) => {
         // console.log(e.id)
@@ -22,6 +20,12 @@ function initGame(params) {
             e.style = "opacity: 1";
             e.classList = "card-image active";
       
+            const winSound = new Audio('/assets/sounds/success-pair.wav');
+
+            const loseSound = new Audio('/assets/sounds/lose-pair.wav');
+
+// music.pause();
+
 
          const active = document.querySelectorAll(".active")
           console.log(active)
@@ -30,12 +34,26 @@ function initGame(params) {
           if(pair.length === 2 && pair[0] === pair[1]){
             active[0].classList = "card-image win";
             active[1].classList = "card-image win";
+
+            winSound.play();
+
+            const nextoLevel = document.querySelectorAll(".win")
+            console.log("cartas: "+ nextoLevel.length)
             console.log("wiii")
+
+            if (nextoLevel.length === 24) {
+              console.log("q crack pasas al siguiente nievel")
+            }
+
+
+
             pair.pop(0)
             pair.pop(0)
           } else if (pair.length === 2 && pair[0] !== pair[1]){
             active[0].classList = "card-image";
             active[1].classList = "card-image";
+            loseSound.play();
+            loseSound.playbackRate = 4;
             setTimeout(()=>{
               active[0].style = "";
               active[1].style = "";
@@ -57,6 +75,12 @@ function initGame(params) {
             // count = 0
           }
 
+
+       
+
+          // if(nextoLevel.length == 24){
+          //   console.log("Eres un ganador xd")
+          // }
 
         })
     })

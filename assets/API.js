@@ -1,6 +1,77 @@
 
 
+function initGame(params) {
 
+    const cards = document.querySelectorAll(".card-image");
+    console.log(cards)
+
+
+
+    let count = 0;
+    let pair = [];
+  
+    
+
+    cards.forEach((e, i) => {
+        // console.log(e.id)
+
+        e.addEventListener("click", ()=> {
+          console.log(e.id)
+
+          pair.push(e.id)
+
+          e.style = "opacity: 1";
+          e.classList = "card-image active";
+
+         const active = document.querySelectorAll(".active")
+          console.log(active)
+
+
+          if(pair.length === 2 && pair[0] === pair[1]){
+            active[0].classList = "card-image win";
+            active[1].classList = "card-image win";
+            console.log("wiii")
+            pair.pop(0)
+            pair.pop(0)
+          } else if (pair.length === 2 && pair[0] !== pair[1]){
+            active[0].classList = "card-image";
+            active[1].classList = "card-image";
+            setTimeout(()=>{
+              active[0].style = "";
+              active[1].style = "";
+            }, 800)
+            console.log("buuuhh")
+            pair.pop(0)
+            pair.pop(0)
+          } else if (pair.length === 2){
+            active[0].classList = "card-image";
+            active[1].classList = "card-image";
+            setTimeout(()=>{
+              active[0].style = "";
+              active[1].style = "";
+            }, 200)
+
+            console.log(active)
+            pair.pop(0)
+            pair.pop(0)
+            // count = 0
+          }
+
+
+        })
+    })
+
+
+
+
+
+    //         
+    //         console.log(active[count].id);
+    //         count++
+
+
+    
+}
 
 
 
@@ -23,7 +94,7 @@ function createGame(characters) {
 
   idCard.forEach((element) => {
     const { id, name, img_url } = characters[element];
-    console.log(id, name, img_url);
+    // console.log(id, name, img_url);
 
       let container = document.querySelector("div#app");
 
@@ -39,12 +110,9 @@ function createGame(characters) {
       image.id = id;
       image.classList = `card-image ${id}`;
       card_image.appendChild(image);
-
-
   });
 
-
-
+  initGame();
 
 }
 
@@ -109,99 +177,6 @@ fetch("https://finalspaceapi.com/api/v0/character/") // ?limit=24
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/// LO que llevo hasta ahora xd!!
-
-// function desordenar(unArray){
-//     var t = unArray.sort(function(a,b) {return (Math.random()-0.5)});
-//     return [...t];
-//   }
-
-// let arrayNumbers = [];
-
-// const min = 1;
-// const max = 47;
-
-// for (let i = 0; arrayNumbers.length < 12; i++) {
-//   const n = Math.floor(Math.random() * (max - min)) + min;
-//   !arrayNumbers.includes(n) && arrayNumbers.push(n);
-// }
-
-// numerosDesordenados = [];
-
-// for (i=0;i<1;i++){
-//     x = desordenar(arrayNumbers);
-//     numerosDesordenados[i] = x;
-//   }
-
-//   console.log(numerosDesordenados[0])
-
-// // console.log(arrayNumbers);
-
-// for (let i = 0; i < 12; i++) {
-//   fetch(`https://finalspaceapi.com/api/v0/character/${arrayNumbers[i]}`)
-//     .then((resp) => resp.json())
-//     .then((datos) => {
-//       // console.log(datos);
-//       // const cardsImage = datos;
-
-//       let container = document.querySelector("div#app");
-
-//       // Container image
-//       let card_image = document.createElement("div");
-//       card_image.id = "image";
-//       card_image.classList = "wobble-ver-right";
-//       container.appendChild(card_image);
-
-//       // Image
-//       let image = document.createElement("img");
-//       image.src = datos.img_url;
-//       image.id = datos.id;
-//       image.classList = `card-image ${datos.id}`;
-//       card_image.appendChild(image);
-
-//     });
-
-// }
-
 // // Juego de memoria, recordar imagenes de personajes con la API Final Space,
 // // Jugar con animaciones al inico e iteractividad para el jugador xd
 // // GUardar puntaje en localStorage y recordar nombre
-
-//   for (let i = 0; i < 12; i++) {
-//     fetch(`https://finalspaceapi.com/api/v0/character/${numerosDesordenados[0][i]}`)
-//       .then((resp) => resp.json())
-//       .then((datos) => {
-//         // console.log(datos)
-//         let container = document.querySelector("div#app");
-
-//         // Container image
-//         let card_image = document.createElement("div");
-//         card_image.id = "image";
-//         card_image.classList = "wobble-ver-right";
-//         container.appendChild(card_image);
-
-//         // Image
-//         let image = document.createElement("img");
-//         image.src = datos.img_url;
-//         image.id = datos.id;
-//         image.classList = `card-image ${datos.id}`;
-//         card_image.appendChild(image);
-
-//       });
-
-//   }

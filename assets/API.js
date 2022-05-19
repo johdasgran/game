@@ -21,8 +21,8 @@ function initGame(params) {
             e.classList = "card-image active";
       
             const winSound = new Audio('/assets/sounds/success-pair.wav');
-
             const loseSound = new Audio('/assets/sounds/lose.wav');
+            const winGame = new Audio('/assets/sounds/win.wav');
 
 // music.pause();
 
@@ -42,6 +42,7 @@ function initGame(params) {
             console.log("wiii")
 
             if (nextoLevel.length === 24) {
+              winGame.play();
               console.log("q crack pasas al siguiente nievel")
             }
 

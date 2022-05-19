@@ -5,8 +5,6 @@ function initGame(params) {
     const cards = document.querySelectorAll(".card-image");
     console.log(cards)
 
-
-
     let count = 0;
     let pair = [];
   
@@ -20,8 +18,10 @@ function initGame(params) {
 
           pair.push(e.id)
 
-          e.style = "opacity: 1";
-          e.classList = "card-image active";
+  
+            e.style = "opacity: 1";
+            e.classList = "card-image active";
+      
 
          const active = document.querySelectorAll(".active")
           console.log(active)
@@ -62,26 +62,8 @@ function initGame(params) {
     })
 
 
-
-
-
-    //         
-    //         console.log(active[count].id);
-    //         count++
-
-
     
 }
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -115,9 +97,6 @@ function createGame(characters) {
   initGame();
 
 }
-
-
-
 
 
 
@@ -159,9 +138,6 @@ function cleanAPI(dataAPI) {
   // console.log(cleanAPI);
   return createGame(cleanAPI);
 }
-
-
-
 
 
 

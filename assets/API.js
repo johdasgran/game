@@ -1,43 +1,68 @@
-function createCards(params) {
-  cardsImage.forEach((element) => {
-    // console.log(element.name);
-
-    let container = document.querySelector("div#app");
-
-    // Container image
-    let card_image = document.createElement("div");
-    card_image.id = "image";
-    container.appendChild(card_image);
-
-    // Image
-    let image = document.createElement("img");
-    image.src = element.img_url;
-    image.classList = "card-image";
-    card_image.appendChild(image);
-  });
-}
 
 
 
-function shuffle(unArray) {
-  var t = unArray.sort(function (a, b) {
-    return Math.random() - 0.5;
-  });
-  return [...t];
-}
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
 function createGame(characters) {
+  console.log(characters);
+
+  const idCard = createLevel();
+
+  idCard.forEach((element) => {
+    const { id, name, img_url } = characters[element];
+    console.log(id, name, img_url);
+
+      let container = document.querySelector("div#app");
+
+      // Container image
+      let card_image = document.createElement("div");
+      card_image.id = "image";
+      card_image.classList = "wobble-ver-right";
+      container.appendChild(card_image);
+
+      // Image
+      let image = document.createElement("img");
+      image.src = img_url;
+      image.id = id;
+      image.classList = `card-image ${id}`;
+      card_image.appendChild(image);
+
+
+  });
 
 
 
+
+}
+
+
+
+
+
+
+function shuffle(arrayWithIds) {
+  const shuffleArray = arrayWithIds.sort(function (a, b) {
+    return Math.random() - 0.5;
+  });
+  return shuffleArray;
 }
 
 
 
 function createLevel(params) {
-  
   const arrayIds = [];
   const min = 1;
   const max = 47;
@@ -47,11 +72,13 @@ function createLevel(params) {
     !arrayIds.includes(n) && arrayIds.push(n);
   }
 
-  console.log(arrayIds);
+  // console.log(arrayIds);
 
   const arrayIdsPair = [...arrayIds, ...arrayIds];
 
-  return shuffle(arrayIdsPair)
+  // console.log(shuffle(arrayIdsPair))
+
+  return shuffle(arrayIdsPair);
 }
 
 
@@ -61,9 +88,14 @@ function cleanAPI(dataAPI) {
   for (const { id: id, name: name, img_url: img_url } of dataAPI) {
     cleanAPI.push({ id: id, name: name, img_url: img_url });
   }
-  console.log(cleanAPI);
+  // console.log(cleanAPI);
   return createGame(cleanAPI);
 }
+
+
+
+
+
 
 fetch("https://finalspaceapi.com/api/v0/character/") // ?limit=24
   .then((resp) => resp.json())
@@ -73,40 +105,6 @@ fetch("https://finalspaceapi.com/api/v0/character/") // ?limit=24
     // const [{id, name, img_url}] = datos
     // console.log(id, name, img_url)
   });
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

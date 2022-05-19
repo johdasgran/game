@@ -22,7 +22,7 @@ function initGame(params) {
       
             const winSound = new Audio('/assets/sounds/success-pair.wav');
 
-            const loseSound = new Audio('/assets/sounds/lose-pair.wav');
+            const loseSound = new Audio('/assets/sounds/lose.wav');
 
 // music.pause();
 

@@ -22,27 +22,31 @@ function createCards(params) {
 
 function createGame(characters) {
 
- 
+ g
+
+
+
+
 }
 
 
-fetch("https://finalspaceapi.com/api/v0/character/?limit=24") // ?limit=24
+function cleanAPI(dataAPI) {
+  const cleanAPI = [];
+  for (const {id: id, name: name, img_url: img_url} of dataAPI) {
+    cleanAPI.push({id: id, name: name, img_url: img_url})
+  }
+  console.log(cleanAPI)
+}
+
+
+fetch("https://finalspaceapi.com/api/v0/character/") // ?limit=24
   .then((resp) => resp.json())
   .then((datos) => {
-    // console.log(datos);
-    const cardsImage = datos;
-    console.log(cardsImage)
+    return cleanAPI(datos)
 
-    
-    const [{xd}] = [datos] 
-    console.log(xd)
-
-
-
-
-    // const {id, img_url} = datos[1] 
-    // console.log(id, img_url)
-    
+    // const [{id, name, img_url}] = datos 
+    // console.log(id, name, img_url)
+   
   });
 
 

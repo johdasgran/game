@@ -33,10 +33,14 @@ addName.addEventListener("click", (e)=>{
         one.classList = "nextToLevel one scale-in-center enable";
     }, 300)
 
+    setTimeout(()=> {
+        one.classList = "nextToLevel one scale-in-center disabled";
+    }, 2050)
+
     setTimeout(()=>{
         console.log("600ms")
         console.log(app.classList = "bounce-in-right enable")
-    }, 1800)
+    }, 2100)
 
 })
 

@@ -57,6 +57,21 @@ function initGame(cardsToShow) {
               winGame.play();
               console.log("q crack pasas al siguiente nievel")
               updateLocaStorage(2)
+
+              const app2 = document.querySelector("#app")
+              const winGameTitle = document.querySelector("#app-win");
+
+              setTimeout(()=> {
+                app2.classList = "bounce-in-right disabled";
+              }, 800);
+
+              setTimeout(()=> {
+                winGameTitle.classList = "nextToLevel scale-in-center enable";
+
+              })
+
+
+
             }
 
             pair.pop(0)

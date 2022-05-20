@@ -197,13 +197,20 @@ div.welcome {
 
 /**** Card ****/
 
-.nextToLevel {
+.nextToLevel,
+.win-class h2 {
   display: none;
   font-size: 6rem;
   /* ##f34c28  #f56f28 */
   position: absolute;
-  top: 4%;
+  width: 90%;
+  margin: 0 auto;
+  top: calc(50% - 4%);
   left: calc(50% - 580px);
+}
+
+.win-class h2 {
+  color: #fff6f4;
 }
 
 .one {
@@ -223,6 +230,7 @@ div.welcome {
 div#app {
   display: none;
   /* display: grid; */
+  /* padding-top: 60px; */
   grid-template-columns: repeat(8, 1fr);
   gap: 8px;
   position: relative;

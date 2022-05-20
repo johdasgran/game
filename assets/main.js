@@ -18,6 +18,7 @@ export function updateLocaStorage(level) {
 }
 
 
+
 const one = document.querySelector(".one")
 
 addName.addEventListener("click", (e)=>{

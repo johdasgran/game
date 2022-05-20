@@ -59,16 +59,16 @@ function initGame(cardsToShow) {
               updateLocaStorage(2)
 
               const app2 = document.querySelector("#app")
-              const winGameTitle = document.querySelector("#app-win");
+              const winGameTitle = document.querySelector(".win-game");
 
               setTimeout(()=> {
                 app2.classList = "bounce-in-right disabled";
+                winGameTitle.classList = "nextToLevel scale-in-center enable";
               }, 800);
 
               setTimeout(()=> {
                 winGameTitle.classList = "nextToLevel scale-in-center enable";
-
-              })
+              }, 1000)
 
 
 
@@ -116,7 +116,7 @@ function initGame(cardsToShow) {
 function createGame(characters) {
   // console.log(characters);
 
-  const idCard = createLevel(6);
+  const idCard = createLevel(12);
 
   idCard.forEach((element) => {
     const { id, name, img_url } = characters[element];
@@ -138,7 +138,7 @@ function createGame(characters) {
       card_image.appendChild(image);
   });
 
-  initGame(6*2);
+  initGame(12*2);
 
 }
 

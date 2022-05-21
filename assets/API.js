@@ -3,14 +3,6 @@ import { updateLocaStorage } from "./main.js";
 
 
 
-
-
-function createLevelOne(params) {
-  
-}
-
-
-
 function initGame(cardsToShow) {
 
 
@@ -109,10 +101,6 @@ function initGame(cardsToShow) {
     
 }
 
-
-
-
-
 function createGame(characters) {
   // console.log(characters);
 
@@ -142,16 +130,12 @@ function createGame(characters) {
 
 }
 
-
-
 function shuffle(arrayWithIds) {
   const shuffleArray = arrayWithIds.sort(function (a, b) {
     return Math.random() - 0.5;
   });
   return shuffleArray;
 }
-
-
 
 function createLevel(numberIds) {
   const arrayIds = [];
@@ -172,8 +156,6 @@ function createLevel(numberIds) {
   return shuffle(arrayIdsPair);
 }
 
-
-
 function cleanAPI(dataAPI) {
   const cleanAPI = [];
   for (const { id: id, name: name, img_url: img_url } of dataAPI) {
@@ -182,8 +164,6 @@ function cleanAPI(dataAPI) {
   // console.log(cleanAPI);
   return createGame(cleanAPI);
 }
-
-
 
 fetch("https://finalspaceapi.com/api/v0/character/") // ?limit=24
   .then((resp) => resp.json())

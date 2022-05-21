@@ -5,7 +5,6 @@ function createLevel(params) {
   
 }
 
-g
 function initGame(cardsToShow) {
 
 

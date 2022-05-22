@@ -177,8 +177,6 @@ fetch("https://finalspaceapi.com/api/v0/character/") // ?limit=24
   });
 
 
-
-
 // // Juego de memoria, recordar imagenes de personajes con la API Final Space,
 // // Jugar con animaciones al inico e iteractividad para el jugador xd
 // // GUardar puntaje en localStorage y recordar nombre

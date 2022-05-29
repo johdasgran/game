@@ -24,6 +24,7 @@ const one = document.querySelector(".one")
 addName.addEventListener("click", (e)=>{
     console.log(nameUser.value);
 
+
     localStorage.setItem('game', JSON.stringify({
         'name': nameUser.value,
         'level': 1

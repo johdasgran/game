@@ -1,9 +1,9 @@
 
 import { updateLocaStorage } from "./main.js";
 
-function createLevel(params) {
+// function createLevel(params) {
   
-}
+// }
 
 function initGame(cardsToShow) {
 
